@@ -88,7 +88,7 @@ pipeline {
 		/*
 		stage('Back to Expense Manager App GitHub Repository') {
             steps {
-				git url: 'https://github.com/umangsaltuniv/verity-devops.gi'
+				git url: 'https://github.com/umangsaltuniv/verity-devops.git'
             }
         }
 		*/
