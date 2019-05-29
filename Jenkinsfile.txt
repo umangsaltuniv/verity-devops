@@ -72,7 +72,7 @@ pipeline {
 		
 		stage('War Deployed on Tomcat Server') {
             steps {
-                sh 'cp /var/jenkins_home/workspace/devops-verity/target/ExpenseApp-1.war /tmp/apache-tomcat-9.0.20/webapps'
+                sh 'cp /var/jenkins_home/workspace/verity-devops/target/ExpenseApp-1.war /tmp/apache-tomcat-9.0.20/webapps'
             }
         }
 		
