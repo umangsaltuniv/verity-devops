@@ -1,0 +1,98 @@
+pipeline {
+    agent any
+    stages {
+		
+		
+        stage('Clean') {
+            steps {
+                sh 'mvn clean'
+            }
+        }
+		
+		
+		stage('PMD') {
+            steps {
+                sh 'mvn site'
+            }
+        }
+		
+		
+		stage('Compile') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+		
+		
+		stage('Static Code Analysis') {
+            steps {
+			 script {
+          scannerHome = tool 'sonar-scanner'
+        }
+				withSonarQubeEnv('My SonarQube Server')
+				{
+				sh "${scannerHome}/bin/sonar-scanner"
+				}
+			}
+		}
+		
+		
+        stage('Unit Test') {
+            steps {
+                sh 'mvn test'
+            }	
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+		
+		
+		stage('JaCoCo') {
+            steps {
+                sh 'mvn jacoco:report'
+            }
+        }
+		
+		
+		stage('Build') {
+            steps {
+                sh 'mvn install -DskipTests'
+            }
+        }
+		
+		
+		stage('Tomcat Server Up') {
+            steps {
+                sh '/tmp/apache-tomcat-9.0.20/bin/startup.sh'
+            }
+        }
+	
+		
+		stage('War Deployed on Tomcat Server') {
+            steps {
+                sh 'cp /var/jenkins_home/workspace/devops-verity/target/ExpenseApp-1.war /tmp/apache-tomcat-9.0.20/webapps'
+            }
+        }
+		
+		
+		stage('System Test') {
+            steps {
+				git url: 'https://github.com/umangsaltuniv/EMSystemTests.git'
+            	sh 'mvn -Dtest=ExpenseManagerSystemTest test'
+            }
+        }
+		
+		
+		/*
+		stage('Back to Expense Manager App GitHub Repository') {
+            steps {
+				git url: 'https://github.com/umangsaltuniv/simple-java-maven-app.git'
+            	
+            }
+        }
+		*/
+		
+    }
+}
