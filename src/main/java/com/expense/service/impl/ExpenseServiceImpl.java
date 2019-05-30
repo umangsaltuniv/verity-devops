@@ -33,7 +33,7 @@ public class ExpenseServiceImpl implements ExpenseService {
 		return expense;
 		
 		//Comment below line to make test fail
-		return expenseRepository.save(expense);
+		//return expenseRepository.save(expense);
 	}
 
 	public List<Expense> getExpense() {
