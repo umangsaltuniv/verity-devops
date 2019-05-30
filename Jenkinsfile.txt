@@ -9,7 +9,7 @@ pipeline {
             }
         }
 		
-		
+		/*
 		stage('PMD') {
             steps {
                 sh 'mvn site'
@@ -54,7 +54,7 @@ pipeline {
                 sh 'mvn jacoco:report'
             }
         }
-		
+		*/
 		
 		stage('Build') {
             steps {
