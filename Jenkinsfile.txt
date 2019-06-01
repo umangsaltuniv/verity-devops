@@ -110,7 +110,7 @@ pipeline {
 		stage('System Test') {
             steps {
 				//Change git url below as per your forked github repository URL
-				git url: 'https://github.com/umangsaltuniv/EMSystemTests.git'
+				git url: 'https://github.com/shwetahada/EMSystemTests.git'
             	sh 'mvn -Dtest=ExpenseManagerSystemTest test'
             }
         }
