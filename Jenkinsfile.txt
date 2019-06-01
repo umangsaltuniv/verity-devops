@@ -36,17 +36,17 @@ pipeline {
 		
 		
 		//Code starts for stage Static Code Analysis
-		stage('Static Code Analysis') {
-            steps {
-			 script {
-          scannerHome = tool 'sonar-scanner'
-        }
-				withSonarQubeEnv('My SonarQube Server')
-				{
-				sh "${scannerHome}/bin/sonar-scanner"
-				}
-			}
-		}
+		//stage('Static Code Analysis') {
+            //steps {
+			// script {
+          //scannerHome = tool 'sonar-scanner'
+       // }
+				//withSonarQubeEnv('My SonarQube Server')
+				//{
+				//sh "${scannerHome}/bin/sonar-scanner"
+				//}
+			//}
+		//}
 		//Code ends for stage Static Code Analysis
 		
 		
