@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
 		
-		// *****ALL CODE TO BE ADDED BELOW THIS COMMENT*****
+		// *****ALL CODE TO BE ADDED BELOW THIS COMMENT and some new comment*****
 		
 		
 		//Code starts for stage Clean
