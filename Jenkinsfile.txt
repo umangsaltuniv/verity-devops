@@ -5,10 +5,116 @@ pipeline {
 		// *****ALL CODE TO BE ADDED BELOW THIS COMMENT*****
 		
 		
+		//Code starts for stage Clean
+        stage('Clean') {
+            steps {
+                sh 'mvn clean'
+            }
+        }
+		//Code ends for stage Clean
 		
 		
 		
+		//Code starts for stage PMD
+		stage('PMD') {
+            steps {
+                sh 'mvn site'
+            }
+        }
+		//Code ends for stage PMD
 		
+		
+		
+		//Code starts for stage Compile
+		stage('Compile') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+		//Code Ends for stage Compile
+		
+		
+		
+		//Code starts for stage Static Code Analysis
+		stage('Static Code Analysis') {
+            steps {
+			 script {
+          scannerHome = tool 'sonar-scanner'
+        }
+				withSonarQubeEnv('My SonarQube Server')
+				{
+				sh "${scannerHome}/bin/sonar-scanner"
+				}
+			}
+		}
+		//Code ends for stage Static Code Analysis
+		
+		
+		
+		//Code starts for stage Unit Test
+        stage('Unit Test') {
+            steps {
+                sh 'mvn test'
+            }	
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+		//Code ends for stage Unit Test
+		
+		
+		
+		//Code starts for stage JaCoCo
+		stage('JaCoCo') {
+            steps {
+                sh 'mvn jacoco:report'
+            }
+        }
+		//Code ends for stage JaCoCo
+		
+		
+		
+		//Code starts for stage Build
+		stage('Build') {
+            steps {
+                sh 'mvn install -DskipTests'
+            }
+        }
+		//Code ends for stage Build
+		
+		
+		
+		//Code starts for stage Tomcat Server Up
+		stage('Tomcat Server Up') {
+            steps {
+                sh '/tmp/apache-tomcat-9.0.20/bin/startup.sh'
+            }
+        }
+		//Code ends for stage Tomcat Server Up
+		
+		
+		
+		//Code starts for stage War Deployed on Tomcat Server
+		stage('War Deployed on Tomcat Server') {
+            steps {
+                sh 'cp /var/jenkins_home/workspace/verity-devops/target/ExpenseApp-1.war /tmp/apache-tomcat-9.0.20/webapps'
+            }
+        }
+		//Code ends for stage War Deployed on Tomcat Server
+		
+		
+		
+		//Code starts for stage System Test
+		stage('System Test') {
+            steps {
+				//Change git url below as per your forked github repository URL
+				git url: 'https://github.com/umangsaltuniv/EMSystemTests.git'
+            	sh 'mvn -Dtest=ExpenseManagerSystemTest test'
+            }
+        }
+		//Code ends for stage System Test
 		
 		// *****ALL CODE TO BE ADDED ABOVE THIS COMMENT*****
     }
