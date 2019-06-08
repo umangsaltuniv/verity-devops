@@ -14,11 +14,15 @@ import com.expense.entity.repository.UserRepository;
  */
 
 @Service
-public class MyUserDetailsService  {
+public class MyUserDetailsService implements UserDetailsService {
 
 	@Autowired
 	private UserRepository userRepository;
 
+	
+	String username = "Raghu";
+	
+	
 	@Override
 	public UserDetails loadUserByUsername(String username) {
 		User user = userRepository.findByUsername(username);
