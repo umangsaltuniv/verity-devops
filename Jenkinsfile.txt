@@ -66,7 +66,24 @@ pipeline {
             }
         }
 		//Code ends for stage JaCoCo
+	
+	//Code starts for stage Build
+		stage('Build') {
+            steps {
+                sh 'mvn install -DskipTests'
+            }
+        }
+		//Code ends for stage Build
 		
+		
+		
+		//Code starts for stage Tomcat Server Up
+		stage('Tomcat Server Up') {
+            steps {
+                sh '/tmp/apache-tomcat-9.0.20/bin/startup.sh'
+            }
+        }
+		//Code ends for stage Tomcat Server Up
 		
 		
 		// *****ALL CODE TO BE ADDED ABOVE THIS COMMENT******
