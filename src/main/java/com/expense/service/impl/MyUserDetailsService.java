@@ -14,7 +14,7 @@ import com.expense.entity.repository.UserRepository;
  */
 
 @Service
-public class MyUserDetailsService implements UserDetailsService {
+public class MyUserDetailsService implements UserServiceImpl {
 
 	@Autowired
 	private UserRepository userRepository;
@@ -29,6 +29,6 @@ public class MyUserDetailsService implements UserDetailsService {
 		if (user == null) {
 			throw new UsernameNotFoundException(username);
 		}
-		return new user;
+		return new MyUserPrincipal(user);
 	}
 }
