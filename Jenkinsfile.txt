@@ -22,6 +22,19 @@ pipeline {
 		//Code ends for stage PMD
 		
 		
+//Code starts for stage Static Code Analysis
+		stage('Static Code Analysis') {
+            steps {
+			 script {
+          scannerHome = tool 'sonar-scanner'
+        }
+				withSonarQubeEnv('My SonarQube Server')
+				{
+				sh "${scannerHome}/bin/sonar-scanner"
+				}
+			}
+		}
+		//Code ends for stage Static Code Analysis		
 		
 		//Code starts for stage Unit Test
         stage('Unit Test') {
