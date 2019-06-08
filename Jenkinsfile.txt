@@ -12,7 +12,8 @@ pipeline {
             }
         }
 		//Code ends for stage Clean
-
+		
+		
 		
 		//Code starts for stage PMD
 		stage('PMD') {
@@ -23,7 +24,8 @@ pipeline {
 		//Code ends for stage PMD
 		
 		
-		/Code starts for stage Compile
+		
+		//Code starts for stage Compile
 		stage('Compile') {
             steps {
                 sh 'mvn compile'
