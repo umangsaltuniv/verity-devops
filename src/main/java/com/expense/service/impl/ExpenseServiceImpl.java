@@ -29,11 +29,11 @@ public class ExpenseServiceImpl implements ExpenseService {
 	public Expense saveExpense(Expense expense) {
 		
 		//Uncomment below 2 lines to make test fail (ExpenseServiceTest.saveExpenseTest())
-		expense.setAmount(2000.00);
-		return expense;
+		//expense.setAmount(2000.00);
+		//return expense;
 		
 		//Comment below line to make test fail
-		//return expenseRepository.save(expense);
+		return expenseRepository.save(expense);
 	}
 
 	public List<Expense> getExpense() {
