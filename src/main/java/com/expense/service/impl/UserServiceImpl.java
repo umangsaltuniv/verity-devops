@@ -69,8 +69,8 @@ public class UserServiceImpl implements UserService {
 		//return user;
 
 		// Comment below 2 lines to make test fail
-		//user.setPassword(passwordEncoder.encode(user.getPassword()));
-		//return userRepository.save(user);
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		return userRepository.save(user);
 
 	}
 
