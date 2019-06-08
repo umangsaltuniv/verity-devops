@@ -14,7 +14,7 @@ import com.expense.entity.repository.UserRepository;
  */
 
 @Service
-public class MyUserDetailsService implements UserServiceImpl {
+public class MyUserDetailsService implements UserDetailsService {
 
 	@Autowired
 	private UserRepository userRepository;
