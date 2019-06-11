@@ -85,7 +85,7 @@ pipeline {
         }
 		//Code ends for stage Build
 		
-		
+		/*
 		stage('Artifactory') {
             steps {
                 step([
@@ -94,7 +94,7 @@ pipeline {
 				])
 			}
         }
-				
+		*/		
 		
 		//Code starts for stage Tomcat Server Up
 		stage('Tomcat Server Up') {
