@@ -87,7 +87,7 @@ pipeline {
 		stage('Artifactory') {
             steps {
                 step([
-				def server = Artifactory.server 'ART'
+				def server = Artifactory.server 'My ART'
 				server.publishBuildInfo buildInfo
 				])
 			}
