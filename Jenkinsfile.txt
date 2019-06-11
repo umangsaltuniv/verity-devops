@@ -89,13 +89,7 @@ pipeline {
 		stage('Artifactory') {
             steps {
                 step([
-				rtServer (
-    id: "My ART",
-    url: "http://192.168.100.65:8081/artifactory",
-    username: "user",
-    password: "password"
-)
-				//def server = Artifactory.server 'My ART'
+				def server = Artifactory.server 'My ART'
 				rtServer.publishBuildInfo buildInfo
 				])
 			}
