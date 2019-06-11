@@ -90,7 +90,7 @@ pipeline {
             steps {
                 step([
 				def server = Artifactory.server 'My ART'
-				def downloadSpec = readFile 'jenkins-examples/pipeline-examples/resources/props-download.json'
+				downloadSpec = readFile 'jenkins-examples/pipeline-examples/resources/props-download.json'
 				def buildInfo1 = server.download spec: downloadSpec
 				server.publishBuildInfo buildInfo1
 				])
