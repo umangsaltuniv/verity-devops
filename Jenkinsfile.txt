@@ -2,6 +2,7 @@ pipeline {
     agent any
     stages {
 		
+		
 		// *****ALL CODE TO BE ADDED BELOW THIS COMMENT*****
 		
 		
@@ -88,6 +89,12 @@ pipeline {
 		stage('Artifactory') {
             steps {
                 step([
+				rtServer (
+    id: "My ART",
+    url: "http://my-artifactory-domain/artifactory",
+    username: "user",
+    password: "password"
+)
 				def server = Artifactory.server 'My ART'
 				server.publishBuildInfo buildInfo
 				])
