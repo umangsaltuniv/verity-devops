@@ -96,7 +96,7 @@ pipeline {
     password: "password"
 )
 				//def server = Artifactory.server 'My ART'
-				server.publishBuildInfo buildInfo
+				rtServer.publishBuildInfo buildInfo
 				])
 			}
         }
