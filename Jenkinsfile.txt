@@ -84,14 +84,15 @@ pipeline {
         }
 		//Code ends for stage Build
 		
-		stage('Publish') {
+		stage('Nexus') {
+			step{
 				nexusPublisher nexusInstanceId: '12345', 
 				nexusRepositoryId: 'releases', 
 				packages: [[$class: 'MavenPackage', 
 				mavenAssetList: [[classifier: '', extension: '', filePath: '/target/ExpenseApp-1.war']], 
 				mavenCoordinate: [artifactId: 'ExpenseApp', groupId: 'com.expense', packaging: 'war', version: '2.23']]]
    }
-		
+		}
 		
 		//Code starts for stage Tomcat Server Up
 		stage('Tomcat Server Up') {
