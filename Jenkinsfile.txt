@@ -84,17 +84,19 @@ pipeline {
         }
 		//Code ends for stage Build
 		
-		/*
+		
 		stage('Artifactory') {
             steps {
                 step([
 				def server = Artifactory.server 'My ART'
+				def buildInfo = Artifactory.newBuildInfo()
 				server.publishBuildInfo buildInfo
 				])
 			}
         }
-		*/
 		
+		
+		/*
 		 stage('Artifactory download and upload'){
             steps {
                 script{
@@ -119,7 +121,7 @@ pipeline {
             }
         }
 		
-		
+		*/
 		
 		
 		
