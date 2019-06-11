@@ -89,7 +89,6 @@ pipeline {
             steps {
                 step([
 				def server = Artifactory.server 'My ART'
-				def buildInfo = Artifactory.newBuildInfo()
 				server.publishBuildInfo buildInfo
 				])
 			}
