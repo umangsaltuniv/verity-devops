@@ -15,7 +15,7 @@ pipeline {
 		//Code ends for stage Clean
 		
 		
-		/*
+		
 		//Code starts for stage PMD
 		stage('PMD') {
             steps {
@@ -74,7 +74,7 @@ pipeline {
             }
         }
 		//Code ends for stage JaCoCo
-		*/
+		
 		
 		
 		//Code starts for stage Build
@@ -85,16 +85,6 @@ pipeline {
         }
 		//Code ends for stage Build
 		
-		/*
-		stage('Artifactory') {
-            steps {
-                step([
-				def server = Artifactory.server 'My ART'
-				server.publishBuildInfo buildInfo
-				])
-			}
-        }
-		*/		
 		
 		//Code starts for stage Tomcat Server Up
 		stage('Tomcat Server Up') {
