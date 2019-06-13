@@ -15,7 +15,7 @@ pipeline {
 		//Code ends for stage Clean
 		
 		
-		/*
+		
 		//Code starts for stage PMD
 		stage('PMD') {
             steps {
@@ -23,7 +23,7 @@ pipeline {
             }
         }
 		//Code ends for stage PMD
-		*/
+		
 		
 		
 		//Code starts for stage Compile
@@ -35,7 +35,7 @@ pipeline {
 		//Code Ends for stage Compile
 		
 		
-		/*
+		
 		//Code starts for stage Static Code Analysis
 		stage('Static Code Analysis') {
             steps {
@@ -49,9 +49,9 @@ pipeline {
 			}
 		}
 		//Code ends for stage Static Code Analysis
-		*/
 		
-		/*
+		
+		
 		//Code starts for stage Unit Test
         stage('Unit Test') {
             steps {
@@ -74,7 +74,7 @@ pipeline {
             }
         }
 		//Code ends for stage JaCoCo
-		*/
+		
 		
 		
 		//Code starts for stage Build
