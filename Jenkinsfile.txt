@@ -25,7 +25,7 @@ pipeline {
 		//Code ends for stage PMD
 		
 		
-		
+		/*
 		//Code starts for stage Compile
 		stage('Compile') {
             steps {
@@ -35,7 +35,7 @@ pipeline {
 		//Code Ends for stage Compile
 		
 		
-		/*
+		
 		//Code starts for stage Static Code Analysis
 		stage('Static Code Analysis') {
             steps {
@@ -49,7 +49,7 @@ pipeline {
 			}
 		}
 		//Code ends for stage Static Code Analysis
-		*/
+		
 		
 		
 		//Code starts for stage Unit Test
@@ -115,7 +115,7 @@ pipeline {
             }
         }
 		//Code ends for stage System Test
-		
+		*/
 		// *****ALL CODE TO BE ADDED ABOVE THIS COMMENT*****
     }
 }
