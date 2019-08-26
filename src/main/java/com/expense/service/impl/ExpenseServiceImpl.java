@@ -28,11 +28,11 @@ public class ExpenseServiceImpl implements ExpenseService {
 	@Override
 	public Expense saveExpense(Expense expense) {
 		
-		//Uncomment below 2 lines to make test fail (ExpenseServiceTest.saveExpenseTest())
+		//Buggy Code(ExpenseServiceTest.saveExpenseTest())
 		expense.setAmount(2000.00);
 		return expense;
 		
-		//Comment below line to make test fail
+		//Correct Code
 		//return expenseRepository.save(expense);
 	}
 
@@ -53,10 +53,10 @@ public class ExpenseServiceImpl implements ExpenseService {
 
 	@Override
 	public void deleteById(Long expenseId) {
-		//Uncomment below line to make test fail (ExpenseControllerTest.testDeleteExpense())
+		//Buggy Code(ExpenseControllerTest.testDeleteExpense())
 		log.info("Debug delete");
 		
-		//Comment below 2 lines to make test fail
+		//Correct Code
 		//expenseRepository.deleteById(expenseId);
 		//expenseRepository.flush();
 	}

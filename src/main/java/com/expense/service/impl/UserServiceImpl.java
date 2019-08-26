@@ -64,11 +64,12 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User saveUser(User user) {
-		// Uncomment below 2 lines to make test fail (UserServiceTest.saveUserTest())
+		
+		// Buggy Code(UserServiceTest.saveUserTest())
 			user.setUsername("Uth");
 			return user;
 
-		// Comment below 2 lines to make test fail
+		// Correct Code
 			//user.setPassword(passwordEncoder.encode(user.getPassword()));
 			//return userRepository.save(user);
 
