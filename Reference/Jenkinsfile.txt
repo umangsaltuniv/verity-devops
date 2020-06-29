@@ -60,8 +60,8 @@ pipeline {
 		
 		
 		
-		//Code starts for stage Build
-		stage('Build') {
+		//Code starts for stage Install
+		stage('Install') {
             steps {
                 sh 'mvn install -DskipTests'
             }
