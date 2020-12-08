@@ -35,7 +35,7 @@ pipeline {
 		//Code starts for Deploy War on Tomcat Server
 		stage('Deploy War on Tomcat Server') {
             steps {
-                sh 'cp /var/jenkins_home/workspace/VD/target/ExpenseApp-1.war /tmp/apache-tomcat-9.0.20/webapps'
+                sh 'cp /var/jenkins_home/workspace/verity-devops/target/ExpenseApp-1.war /tmp/apache-tomcat-9.0.20/webapps'
             }
         }
 		//Code ends for stage Deploy War on Tomcat Server
