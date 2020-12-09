@@ -74,11 +74,11 @@ pipeline {
 		//Code ends for stage System Test	
 		*/
 		
-		/*
+		
 		//Code starts for stage System Test - Way1
 		stage('Parallel System Test') {
 			parallel{
-					stage('Branch main'){
+					stage('Branch master'){
 										steps {
 												//Change git url below as per your forked github repository URL
 												git url: 'https://github.com/umangsaltuniv/EMSystemTests.git', branch: 'master'
