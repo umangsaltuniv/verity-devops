@@ -9,9 +9,9 @@ pipeline {
 		//Code starts for stage Clean
         stage('Clean') {
             steps {
-				step{
+				//step{
                 sh 'mvn clean'
-				}
+				//}
             }
         }
 		//Code ends for stage Clean
