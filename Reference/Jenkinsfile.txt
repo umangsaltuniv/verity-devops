@@ -12,7 +12,7 @@ pipeline {
 				//step{
                 sh 'mvn clean'
 				//}
-            }
+            
         }
 		//Code ends for stage Clean
 		
