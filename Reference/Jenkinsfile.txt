@@ -9,13 +9,15 @@ pipeline {
 		//Code starts for stage Clean
         stage('Clean') {
             steps {
+				step{
                 sh 'mvn clean'
+				}
             }
         }
 		//Code ends for stage Clean
 		
 		
-	
+	/*
 		//Code starts for stage PMD
 		stage('PMD') {
             steps {
@@ -98,7 +100,7 @@ pipeline {
             }
         }
 		//Code ends for stage System Test
-		
+		*/
 		// ******ALL CODE TO BE ADDED ABOVE THIS COMMENT******
     }
 }
