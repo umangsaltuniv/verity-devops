@@ -86,7 +86,7 @@ pipeline {
 		stage('System Test') {
             steps {
 				//Change git url below as per your forked github repository URL
-				git url: 'https://github.com/rahulvaid19993/verity-devops.git'
+				git url: 'https://github.com/rahulvaid19993/EMSystemTests.git'
 				
             	sh 'mvn -Dtest=ExpenseManagerSystemTest test'
             }
